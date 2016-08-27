@@ -1,0 +1,28 @@
+[{
+			'name' : 'admin',
+			'childs' : [{
+						name : 'menu.tools',
+						seq : 1000,
+						access : 'access.config.admin',
+						classes : 'icon-hammer',
+						childs : [{
+									name : 'menu.language',
+									load : '/admin/language',
+									seq : 10,
+									access : 'access.config.admin',
+									classes : 'icon-magic-wand'
+								},{
+									name : 'menu.rsakey',
+									load : '/admin/rsakey',
+									seq : 20,
+									access : 'access.config.admin',
+									classes : 'icon-key2'
+								},{
+									name : 'menu.qcode',
+									load : '/admin/qcode',
+									seq : 30,
+									access : 'access.config.admin',
+									classes : 'icon-qrcode'
+								}]
+					},]
+		}]
