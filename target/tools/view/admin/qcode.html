@@ -1,0 +1,31 @@
+<div class='head'>$lang.get('qcode.title')</div>
+
+<div class='tabs'>
+	<a href='/admin/qcode' class='selected'>$lang.get('a.qcode')</a>
+</div>
+
+<div class='form'>
+	<div><label><h3>$lang.get('tools.content'):</h3></label><textarea name='content'></textarea></div>
+	<div><label><h3>$lang.get('tools.width'):</h3><input type='text' name='w' value='200'/></label></div>
+	<div><label><h3>$lang.get('tools.height'):</h3><input type='text' name='h' value='200'/></label></div>
+
+	<div class='img'><img /></div>
+	<div class="btns"><button class='btn btn-success' onclick='_ok()'>$lang.get('btn.ok')</button></div>
+</div>
+<script>
+function _ok(){
+	var p = {};
+	p.content = $('div.form textarea[name=content').val();
+	p.w = $('div.form input[name=w').val();
+	p.h = $('div.form input[name=h').val();
+	processing && processing.show();
+	$.post('/admin/qcode/create', p, function(d){
+		processing && processing.hide();
+		if(d.state == 200) {
+			$('div.form img').attr('src', d.uri);
+		} else {
+			$.error(d.message);
+		}
+	});
+}
+</script>
