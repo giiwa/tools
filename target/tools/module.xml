@@ -6,7 +6,7 @@
   <package>org.giiwa.tools.web</package>
   <screenshot>/images/demo_screenshot.png</screenshot>
   <version>1.0.1</version>
-  <build>1610091105</build>
+  <build>1610092018</build>
   <enabled>true</enabled>
   <readme>tools</readme>
   <listener>

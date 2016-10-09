@@ -33,4 +33,19 @@ public class qcode extends Model {
     }
     this.response(jo);
   }
+
+  @Path(path = "show")
+  public void show() {
+    String url = this.getString("content");
+    Temp t = Temp.create("qcode.jpg");
+    JSON jo = JSON.create();
+    try {
+      GImage.QRCode(t.getFile(), url, 120, 120);
+      this.set("uri", t.getUri());
+    } catch (Exception e) {
+      log.error(e.getMessage(), e);
+      jo.put(X.MESSAGE, e.getMessage());
+    }
+    this.show("/admin/qcode.image.html");
+  }
 }
