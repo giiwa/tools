@@ -12,10 +12,4 @@
   <listener>
     <class>org.giiwa.tools.web.ToolsListener</class>
   </listener>
-  <setting>
-  </setting>
-  <filter>
-  </filter>
-  <depends>
-  </depends>
 </module>
